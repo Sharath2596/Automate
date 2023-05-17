@@ -7,10 +7,10 @@ output_dir = Path(__file__).parent / "output"
 output_dir.mkdir(parents=True, exist_ok=True)
 
 # Define Excel file path
-excel_file = Path(__file__).parent / "Mysuru.xlsx"
+excel_file = Path(__file__).parent / "NV.xlsx"
 
 df = pd.read_excel(excel_file)
-column_name = "T_name"
+column_name = "NAME_VILLAGE"
 replace_symbols = ['>', '<', ':', '"', '/', '\\\\', '\|', '\?', '\*']
 df[column_name] = (
     df[column_name].replace(replace_symbols, '', regex=True).str.strip().str.title()
